@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semillas - Comunidad de Jardinería</title>
+  {% load static %}
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  
+  
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'images/logos/logo.png' %}"  height="70" class="d-inline-block align-top" alt="Logo">
+    </a>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="Inicio.html">Inicio</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Productos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="Productos.html" onclick="mostrarProductos('macetas')">Macetas</a>
+            <a class="dropdown-item" href="Productostierra.html" onclick="mostrarProductos('tierra_de_hojas')">Tierra de Hojas</a>
+            <a class="dropdown-item" href="Productossemillas.html" onclick="mostrarProductos('semillas')">Semillas</a>
+          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="Donaciones.html">Donaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Iniciosesion.html">Iniciar sesión / Registro</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Carrodecompras.html">Carrito</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido -->
+  <div class="container mt-4">
+    <h2>Semillas</h2>
+    <div class="row">
+      <!-- Card de producto -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'images/productos/semillas1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Viola Cornutta</h5>
+            <p class="card-text"> "La Viola Cornuta, también conocida como Pensamiento Cornuto, es una planta herbácea perenne o bienal apreciada por sus hermosas flores y su resistencia. Pertenece a la familia de las violetas y es originaria de Europa."</p>
+            <h4>$10000</h4>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal1" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
+            <button class="btn btn-primary agregar-carrito" data-nombre="Viola Cornutta" data-cantidad="1" data-precio="10">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- Modal 1-->
+  <div class="modal fade" id="detalleProductoModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí se mostrarán los detalles del producto 1-->
+          <p id="detalleProducto">
+            <ul>
+              <li>Flores delicadas: Las flores de la Viola Cornuta son pequeñas pero muy vistosas, con pétalos suavemente curvados que pueden variar en color desde el violeta intenso hasta el blanco, pasando por tonos de azul, amarillo y rosa.</li>
+              <li>Floración prolongada: Esta planta produce flores de forma continua desde la primavera hasta finales del otoño, siempre y cuando se le proporcione el cuidado adecuado.</li>
+              <li>Resistencia y rusticidad: La Viola Cornuta es una planta resistente que puede soportar temperaturas bajas y condiciones climáticas adversas, lo que la convierte en una opción ideal para jardines de invierno y zonas con climas variables.</li>
+              <li>Tamaño compacto: Suele crecer hasta una altura de 15 a 25 centímetros, lo que la hace perfecta para cultivar en macetas, borduras o como planta de cobertura del suelo en jardines.</li>
+              <li>Fácil cultivo: Es una planta de bajo mantenimiento que requiere suelos bien drenados y una exposición soleada o semisombra para crecer de manera óptima. Además, responde bien a la poda ligera para promover una floración más abundante.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Card de producto -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'images/productos/semilla3.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Pensamiento colores variados</h5>
+            <p class="card-text">"Los Pensamientos son flores conocidas por su belleza y variedad de colores. Son plantas herbáceas anuales o perennes, apreciadas por su capacidad para alegrar jardines y macetas con su abundante floración y su característico aspecto de "carita".</p>
+            <h4>$7000</h4>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal2" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
+            <button class="btn btn-primary agregar-carrito" data-nombre="Pensamiento" data-cantidad="1" data-precio="7000">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- Modal 2-->
+  <div class="modal fade" id="detalleProductoModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí se mostrarán los detalles del producto 2-->
+          <p id="detalleProducto">
+            <ul>
+              <li>Variedad de colores: Los Pensamientos presentan una amplia gama de colores, que incluyen tonos de violeta, azul, amarillo, blanco y naranja.</li>
+              <li>Tamaño compacto: Suelen crecer hasta una altura de 15 a 30 centímetros, lo que los hace ideales para espacios reducidos o para cultivar en macetas.</li>
+              <li>Floración prolongada: Producen flores durante gran parte del año, desde la primavera hasta finales del otoño, dependiendo de las condiciones climáticas.</li>
+              <li>Tolerancia al frío: Son plantas resistentes que pueden soportar bajas temperaturas, lo que las convierte en una opción popular para la jardinería de invierno.</li>
+              <li>Fácil cuidado: Los Pensamientos son de fácil cultivo y requieren poco mantenimiento. Prefieren suelos bien drenados y lugares con luz solar parcial.</li>
+            </ul>
+
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Card de producto -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'images/productos/semilla4.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Cosmos Sensacion</h5>
+
+            <p class="card-text">"El Cosmos Sensación es una planta anual originaria de México que se caracteriza por su vistosa y abundante floración. Pertenece a la familia Asteraceae y es apreciada por su facilidad de cultivo, así como por su capacidad para atraer mariposas y otros polinizadores al jardín."</p>
+            <h4>$5000</h4>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal3" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
+            <button class="btn btn-primary agregar-carrito" data-nombre="Cosmos Sensacion" data-cantidad="1" data-precio="5000">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- Agregar más cards de productos aquí -->
+    </div>
+  </div>
+      <!-- Modal -->
+  <div class="modal fade" id="detalleProductoModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí se mostrarán los detalles del producto -->
+          <p id="detalleProducto">
+            <ul>
+              <li>Flores llamativas: Las flores del Cosmos Sensación son grandes, con pétalos finos y lanceolados que se disponen en forma de margarita. Su color varía desde el blanco puro hasta el rosa intenso y el carmesí, con un característico centro amarillo.</li>
+              <li>Altura impresionante: Esta planta puede alcanzar alturas de hasta 1 metro, lo que la convierte en una excelente opción para crear borduras altas o para añadir verticalidad al jardín.</li>
+              <li>Floración prolongada: El Cosmos Sensación produce flores de forma continua durante gran parte del verano y el otoño, siempre y cuando se le proporcione un suelo bien drenado y una exposición soleada.</li>
+              <li>Resistencia y adaptabilidad: Es una planta resistente que puede tolerar condiciones de sequía y suelos pobres, aunque prefiere un riego regular y un sustrato rico en materia orgánica para un crecimiento óptimo.</li>
+              <li>Fácil cultivo: El Cosmos Sensación es una planta de bajo mantenimiento que no requiere cuidados especiales. Se puede sembrar directamente en el suelo o en macetas y responde bien a la poda ligera para promover una floración más abundante.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Contacto</h3>
+          <p>¿Tienes alguna pregunta o sugerencia? ¡Contáctanos!</p>
+          <p>Dirección: Calle Ficticia 123, Ciudad Imaginaria</p>
+          <p>Teléfono: <a href="tel:+1234567890">+123 456 7890</a></p>
+          <p>Correo Electrónico: <a href="mailto:info@jardinariaimaginaria.com">info@jardinariaimaginaria.com</a></p>
+          <p>Redes Sociales:</p>
+          <button type="button" class="btn">
+            <a href="https://www.instagram.com/duocuc_cl/?hl=es"><img src="{% static 'images/MapaRedes/Instagram.png' %}" alt="maps yera" width = "60px" height="50px"></a>
+        </button>
+        <br>
+        <button type="button" class="btn">
+          <a href="https://www.facebook.com/DuocUC/?locale=es_LA"><img src="{% static 'images/MapaRedes/Facebook.png' %}" alt="maps yera" width = "60px" height="50px"></a>
+      </button>
+      <br>
+      <button type="button" class="btn">
+        <a href="https://x.com/DuocUC?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="{% static 'images/MapaRedes/Twitter.png' %}" alt="maps yera" width = "60px" height="50px"></a>
+    </button>
+          <p>¡Estamos aquí para ayudarte! No dudes en comunicarte con nosotros para cualquier consulta o asistencia adicional.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Ubicación</h3>
+          <button type="button" class="btn">
+            <a href="https://www.google.com/maps/place/Duoc+UC:+Sede+San+Joaquín/@-33.5000806,-70.6211583,17z/data=!3m1!4b1!4m6!3m5!1s0x9662d00be4a5fa81:0xcd8eaf5b1d547f64!8m2!3d-33.5000852!4d-70.6162928!16s%2Fg%2F1hm4_spwp?entry=ttu"><img src="{% static 'images/MapaRedes/Mapa.webp' %}" alt="maps yera" width = "60px" height="50px"></a>
+        </button>
+        </div>
+        <div class="col-md-4">
+          <h3>Trabaja con nosotros</h3>
+          <p>¿Interesado en unirte a nuestro equipo? </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <!-- Enlaces a scripts de Bootstrap y jQuery (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/agregarcarro.js' %}"></script>
+    
+        
+
+  </body>
+</html>

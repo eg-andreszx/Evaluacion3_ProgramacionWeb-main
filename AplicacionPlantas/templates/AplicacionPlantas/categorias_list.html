@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Editar Categorias</h1>
+    <br>
+    <div class="containerAgregar">
+
+        <button type="button">
+            <a href="{% url 'categoriasAdd' %}">Agregar</a>
+        </button>
+    </div>
+    <div id="idMensajes">
+         {% if mensajes %}
+         <div class="alert alert-success">
+             {% for mensaje in mensajes %}
+             <p>{{mensaje}}</p>
+             {% endfor %} 
+         </div>
+         {% endif %} 
+         {% if errores %}
+         <div class="alert alert-danger">
+            {% for error in errores %}
+            <p>{{error}}</p>
+            {% endfor %}
+         </div>
+         {% endif %}
+    </div>
+
+    <table>
+        {% if categorias %}
+        <th>Categorias</th>
+        <th>Eliminar</th>
+        <th>Modificar</th>
+        {% for x in categorias %}
+        <tr>
+            <td>{{x.nombre_categoria}}</td>
+            <td>
+                <a href="{% url 'categorias_del' pk=x.id_categoria %}">Eliminar</a>
+            </td>
+            <td>
+                <a href="{% url 'categorias_edit' pk=x.id_categoria %}">Modificar</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+
+        {% endif %}
+    </table>
+    
+    <script>
+        $(document).ready(function () {
+            $("#idMensajes").delay(2000).fadeOut("slow");
+        })
+    </script>
+    
+</body>
+</html>

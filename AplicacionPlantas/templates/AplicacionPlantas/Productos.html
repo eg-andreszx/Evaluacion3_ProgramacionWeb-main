@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Comunidad de Jardinería</title>
+  {% load static %}
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'images/logos/logo.png' %}"  height="70" class="d-inline-block align-top" alt="Logo">
+    </a>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="Inicio.html">Inicio</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Productos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="Productos.html" onclick="mostrarProductos('macetas')">Macetas</a>
+            <a class="dropdown-item" href="Productostierra.html" onclick="mostrarProductos('tierra_de_hojas')">Tierra de Hojas</a>
+            <a class="dropdown-item" href="Productossemillas.html" onclick="mostrarProductos('semillas')">Semillas</a>
+          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="Donaciones.html">Donaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Iniciosesion.html">Iniciar sesión / Registro</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Carrodecompras.html">Carrito</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido -->
+  <div class="container mt-4">
+    <h2>Macetas</h2>
+    <div class="row">
+      <!-- Card de producto 1-->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'images/productos/macetero1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Verde Vida</h5>
+            <p class="card-text"> "El macetero 'Verde Vida' está hecho de cerámica de alta calidad y tiene un tamaño de 25 cm de diámetro y 20 cm de altura. Su diseño elegante y minimalista complementa cualquier espacio, brindando un amplio espacio para que tus plantas crezcan felices."</p>
+            <h4>$10000</h4>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal1" data-nombre="Verde Vida" data-descripcion="El macetero 'Verde Vida' está hecho de cerámica de alta calidad y tiene un tamaño de 25 cm de diámetro y 20 cm de altura. Su diseño elegante y minimalista complementa cualquier espacio, brindando un amplio espacio para que tus plantas crezcan felices. Precio: $10000">Ver Detalles</button>
+            <button class="btn btn-primary agregar-carrito" data-nombre="Verde Vida" data-cantidad="1" data-precio="10000">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- Modal 1-->
+  <div class="modal fade" id="detalleProductoModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí se mostrarán los detalles del producto 1-->
+          <p id="detalleProducto">
+            <ul>
+              <li>Producto: Macetero "Verde Vida"</li>
+              <li>Material: Cerámica de alta calidad</li>
+              <li>Dimensiones: 25 cm de diámetro x 20 cm de altura</li>
+              <li>Diseño: Elegante y minimalista</li>
+              Características:
+
+              <li>Fabricado con cerámica duradera.</li>
+              <li>Espacio amplio para crecimiento de plantas.</li>
+              <li>Diseño versátil para cualquier espacio.</li>
+              <li>Ideal para interiores y exteriores.</li>
+              <li>Acabado de alta calidad.</li>
+              <li>Fácil de limpiar y mantener.</li>
+
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Card de producto 2-->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'images/productos/mecetero2.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Florece en Casa</h5>
+            <p class="card-text">"El macetero 'Florece en Casa' está fabricado en plástico resistente y tiene un tamaño de 40 cm de diámetro y 30 cm de altura. Su diseño versátil se adapta a cualquier estilo de decoración, ofreciendo espacio suficiente para que tus plantas crezcan y florezcan."</p>
+            <h4>$7000</h4>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal2" data-nombre="Verde Vida" data-descripcion="El macetero">Ver Detalles</button>
+            <button class="btn btn-primary agregar-carrito" data-nombre="Florece en Casa" data-cantidad="1" data-precio="7000">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- Modal 2-->
+  <div class="modal fade" id="detalleProductoModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí se mostrarán los detalles del producto 3-->
+          <p id="detalleProducto">
+            <ul>
+              <li>Producto: Macetero "Florece en Casa"</li>
+              <li>Material: Plástico resistente</li>
+              <li>Dimensiones: 40 cm de diámetro x 30 cm de altura</li>
+              <li>Diseño: Versátil y adaptable a cualquier estilo de decoración</li>
+              Características:
+
+              <li>Fabricado con plástico duradero y resistente.</li>
+              <li>Amplio espacio para el crecimiento y floración de plantas.</li>
+              <li>Diseño versátil para adaptarse a cualquier estilo de decoración.</li>
+              <li>Adecuado para uso en interiores y exteriores.</li>
+              <li>Fácil de limpiar y mantener.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Card de producto 3-->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'images/productos/macetero3.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Jardín Urbano</h5>
+            <p class="card-text">"El macetero 'Jardín Urbano' es de metal resistente y tiene un tamaño de 20 cm de ancho, 60 cm de alto y 15 cm de profundidad. Perfecto para espacios urbanos, su diseño compacto te permite crear un pequeño jardín vertical en tu hogar o balcón."</p>
+            <h4>$5000</h4>
+            <button class="btn btn-primary ver-detalle" data-toggle="modal" data-target="#detalleProductoModal3" data-nombre="Verde Vida" data-descripcion="El ma cerámica de alta calidad y minimalista comp">Ver Detalles</button>
+            <button class="btn btn-primary agregar-carrito" data-nombre="Jardín Urbano" data-cantidad="1" data-precio="5000">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Modal 3-->
+  <div class="modal fade" id="detalleProductoModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí se mostrarán los detalles del producto 3-->
+          <p id="detalleProducto">
+            <ul>
+              <li>Producto: Macetero "Jardín Urbano"</li>
+              <li>Material: Metal resistente</li>
+              <li>Dimensiones: 20 cm de ancho x 60 cm de alto x 15 cm de profundidad</li>
+              <li>Diseño: Compacto y perfecto para espacios urbanos</li>
+              Características: 
+
+              <li>Fabricado con metal resistente para mayor durabilidad.</li>
+              <li>Diseño compacto que permite crear un pequeño jardín vertical en espacios urbanos.</li>
+              <li>Ideal para colocar en balcones, terrazas o interiores con espacio limitado.</li>
+              <li>Proporciona un toque verde y natural en entornos urbanos.</li>
+              <li>Fácil de instalar y mantener.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Contacto</h3>
+          <p>¿Tienes alguna pregunta o sugerencia? ¡Contáctanos!</p>
+          <p>Dirección: Calle Ficticia 123, Ciudad Imaginaria</p>
+          <p>Teléfono: <a href="tel:+1234567890">+123 456 7890</a></p>
+          <p>Correo Electrónico: <a href="mailto:info@jardinariaimaginaria.com">info@jardinariaimaginaria.com</a></p>
+          <p>Redes Sociales:</p>
+          <button type="button" class="btn">
+            <a href="https://www.instagram.com/duocuc_cl/?hl=es"><img src="{% static 'images/MapaRedes/Instagram.png' %}" alt="maps yera" width = "60px" height="50px"></a>
+        </button>
+        <br>
+        <button type="button" class="btn">
+          <a href="https://www.facebook.com/DuocUC/?locale=es_LA"><img src="{% static 'images/MapaRedes/Facebook.png' %}" alt="maps yera" width = "60px" height="50px"></a>
+      </button>
+      <br>
+      <button type="button" class="btn">
+        <a href="https://x.com/DuocUC?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="{% static 'images/MapaRedes/Twitter.png' %}" alt="maps yera" width = "60px" height="50px"></a>
+    </button>
+          <p>¡Estamos aquí para ayudarte! No dudes en comunicarte con nosotros para cualquier consulta o asistencia adicional.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Ubicación</h3>
+          <button type="button" class="btn">
+            <a href="https://www.google.com/maps/place/Duoc+UC:+Sede+San+Joaquín/@-33.5000806,-70.6211583,17z/data=!3m1!4b1!4m6!3m5!1s0x9662d00be4a5fa81:0xcd8eaf5b1d547f64!8m2!3d-33.5000852!4d-70.6162928!16s%2Fg%2F1hm4_spwp?entry=ttu"><img src="{% static 'images/MapaRedes/Mapa.webp' %}" alt="maps yera" width = "60px" height="50px"></a>
+        </button>
+        </div>
+        <div class="col-md-4">
+          <h3>Trabaja con nosotros</h3>
+          <p>¿Interesado en unirte a nuestro equipo? </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <!-- Enlaces a scripts de Bootstrap y jQuery  -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/agregarcarro.js' %}"></script>
+
+</body>
+</html>
